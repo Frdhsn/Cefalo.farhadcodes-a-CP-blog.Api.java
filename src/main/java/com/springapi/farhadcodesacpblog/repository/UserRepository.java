@@ -1,6 +1,6 @@
-package com.springapi.farhadcodesacpblog.Repository;
+package com.springapi.farhadcodesacpblog.repository;
 
-import com.springapi.farhadcodesacpblog.Database.User;
+import com.springapi.farhadcodesacpblog.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
