@@ -46,7 +46,6 @@ public class User {
     public Date getCreationTime() {
         return CreationTime;
     }
-
     public void setCreationTime(Date creationTime) {
         CreationTime = creationTime;
     }
