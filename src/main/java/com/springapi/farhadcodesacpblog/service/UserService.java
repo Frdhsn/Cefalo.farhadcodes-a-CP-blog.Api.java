@@ -1,7 +1,7 @@
-package com.springapi.farhadcodesacpblog.Service;
+package com.springapi.farhadcodesacpblog.service;
 
-import com.springapi.farhadcodesacpblog.Repository.UserRepository;
-import com.springapi.farhadcodesacpblog.Database.User;
+import com.springapi.farhadcodesacpblog.repository.UserRepository;
+import com.springapi.farhadcodesacpblog.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
