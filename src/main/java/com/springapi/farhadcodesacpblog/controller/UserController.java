@@ -1,13 +1,14 @@
 package com.springapi.farhadcodesacpblog.controller;
 
+import com.springapi.farhadcodesacpblog.dtos.UserDTO;
 import com.springapi.farhadcodesacpblog.entity.User;
 import com.springapi.farhadcodesacpblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -15,14 +16,14 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/users")
-    public List<User> getAllUsers() {
-        return service.getAllUsers();
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
+        return ResponseEntity.status(HttpStatus.OK).body(service.getAllUsers());
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable Long id) {
-        Optional<User> user = service.getUserById(id);
-        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<?> getUserById(@PathVariable int id) {
+        UserDTO user = service.getUserById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
     @PostMapping("/users")
@@ -30,9 +31,14 @@ public class UserController {
         return service.createUser(user);
     }
 
-    @PutMapping("/users/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
-        Optional<User> user = service.updateUser(id, updatedUser);
-        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    @PutMapping(value = "/users/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+        UserDTO user = service.updateUser(id, updatedUser);
+        return new ResponseEntity<>(user,HttpStatus.OK);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable int id){
+        service.deleteUser(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

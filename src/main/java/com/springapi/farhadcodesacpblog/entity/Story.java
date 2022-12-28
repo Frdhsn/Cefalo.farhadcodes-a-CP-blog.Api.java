@@ -3,6 +3,7 @@ package com.springapi.farhadcodesacpblog.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -16,7 +17,8 @@ public class Story {
     @Id
     @GeneratedValue
     private  int Id;
-    private int AuthorId;
+    @ManyToOne
+    private User AuthorId;
     @NotBlank
     @NotEmpty
     @NotNull
@@ -37,7 +39,7 @@ public class Story {
     private Date CreationTime = new Date(System.currentTimeMillis());
     private Date LastModifiedTime = new Date(System.currentTimeMillis());
 
-    public Story(int id, int authorId, String title, String description, String difficulty, String topic) {
+    public Story(int id, User authorId, String title, String description, String difficulty, String topic) {
         Id = id;
         AuthorId = authorId;
         Title = title;
@@ -65,11 +67,11 @@ public class Story {
         Id = id;
     }
 
-    public int getAuthorId() {
+    public User getAuthorId() {
         return AuthorId;
     }
 
-    public void setAuthorId(int authorId) {
+    public void setAuthorId(User authorId) {
         AuthorId = authorId;
     }
 

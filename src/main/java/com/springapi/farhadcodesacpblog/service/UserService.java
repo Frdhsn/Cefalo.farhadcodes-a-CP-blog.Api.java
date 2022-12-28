@@ -1,7 +1,9 @@
 package com.springapi.farhadcodesacpblog.service;
 
+import com.springapi.farhadcodesacpblog.dtos.UserDTO;
 import com.springapi.farhadcodesacpblog.repository.UserRepository;
 import com.springapi.farhadcodesacpblog.entity.User;
+import com.springapi.farhadcodesacpblog.utils.UserDTOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,32 +14,43 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private UserDTOMapper userDTOMapper;
 
-    public UserService(UserRepository _repository) {
-        repository = _repository;
+    public List<UserDTO> getAllUsers() {
+        List<User> fetchedUsers = repository.findAll();
+        return fetchedUsers.stream().map(x->userDTOMapper.mapDetails(x)).toList();
     }
 
-    public List<User> getAllUsers() {
+    public UserDTO getUserById(int Id) {
+        Optional<User> fetchedUser = repository.findById(Id);
 
-        return repository.findAll();
-    }
-
-    public Optional<User> getUserById(Long id) {
-
-        return repository.findById(id);
+        UserDTO user = userDTOMapper.mapDetails(fetchedUser.get());
+        return user;
     }
 
     public User createUser(User user) {
         return repository.save(user);
     }
 
-    public Optional<User> updateUser(Long id, User updatedUser) {
+    public UserDTO updateUser(int id, User updatedUser) {
         Optional<User> user = repository.findById(id);
         if (user.isPresent()) {
             User u = user.get();
             u.setName(updatedUser.getName());
             u.setEmail(updatedUser.getEmail());
+            repository.save(u);
+
+            UserDTO userDTO = userDTOMapper.mapDetails(user.get());
+            return userDTO;
         }
-        return user;
+        return null;
+    }
+    public void deleteUser(int id){
+        Optional<User> user = repository.findById(id);
+        if(user.isPresent()){
+            repository.deleteById(id);
+            return;
+        }
     }
 }
