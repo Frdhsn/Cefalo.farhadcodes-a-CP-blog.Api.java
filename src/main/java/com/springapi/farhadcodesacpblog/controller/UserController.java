@@ -1,7 +1,7 @@
-package com.springapi.farhadcodesacpblog.Controller;
+package com.springapi.farhadcodesacpblog.controller;
 
-import com.springapi.farhadcodesacpblog.Database.User;
-import com.springapi.farhadcodesacpblog.Service.UserService;
+import com.springapi.farhadcodesacpblog.entity.User;
+import com.springapi.farhadcodesacpblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

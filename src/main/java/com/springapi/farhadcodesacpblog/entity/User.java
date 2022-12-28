@@ -1,4 +1,4 @@
-package com.springapi.farhadcodesacpblog.Database;
+package com.springapi.farhadcodesacpblog.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,7 +46,6 @@ public class User {
     public Date getCreationTime() {
         return CreationTime;
     }
-
     public void setCreationTime(Date creationTime) {
         CreationTime = creationTime;
     }
