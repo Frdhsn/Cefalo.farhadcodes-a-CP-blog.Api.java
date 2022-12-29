@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @RequestMapping("/")
     public String helloWorld(){
-        return "Hello World from blog api backend. Work In Progress.";
+        return "Hello World from Backend. Work In Progress.";
     }
 }

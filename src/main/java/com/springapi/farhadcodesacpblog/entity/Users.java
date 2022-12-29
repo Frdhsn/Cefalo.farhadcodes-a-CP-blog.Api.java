@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class User {
+public class Users {
     @Id
     @GeneratedValue
     private int id;
@@ -18,7 +18,7 @@ public class User {
     private Date CreationTime = new Date(System.currentTimeMillis());
     private Date LastModifiedTime = new Date(System.currentTimeMillis());
 
-    public User(int id, String name, String email, String password, Date creationTime, Date lastModifiedTime) {
+    public Users(int id, String name, String email, String password, Date creationTime, Date lastModifiedTime) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -28,7 +28,7 @@ public class User {
     }
 
 
-    public User() {
+    public Users() {
     }
 
     public int getId() {
@@ -94,7 +94,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        Users user = (Users) o;
         return id == user.id && name.equals(user.name) && email.equals(user.email) && password.equals(user.password) && CreationTime.equals(user.CreationTime) && LastModifiedTime.equals(user.LastModifiedTime);
     }
 

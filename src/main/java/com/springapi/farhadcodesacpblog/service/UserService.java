@@ -2,7 +2,7 @@ package com.springapi.farhadcodesacpblog.service;
 
 import com.springapi.farhadcodesacpblog.dtos.UserDTO;
 import com.springapi.farhadcodesacpblog.repository.UserRepository;
-import com.springapi.farhadcodesacpblog.entity.User;
+import com.springapi.farhadcodesacpblog.entity.Users;
 import com.springapi.farhadcodesacpblog.utils.UserDTOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,25 +18,25 @@ public class UserService {
     private UserDTOMapper userDTOMapper;
 
     public List<UserDTO> getAllUsers() {
-        List<User> fetchedUsers = repository.findAll();
+        List<Users> fetchedUsers = repository.findAll();
         return fetchedUsers.stream().map(x->userDTOMapper.mapDetails(x)).toList();
     }
 
     public UserDTO getUserById(int Id) {
-        Optional<User> fetchedUser = repository.findById(Id);
+        Optional<Users> fetchedUser = repository.findById(Id);
 
         UserDTO user = userDTOMapper.mapDetails(fetchedUser.get());
         return user;
     }
 
-    public User createUser(User user) {
+    public Users createUser(Users user) {
         return repository.save(user);
     }
 
-    public UserDTO updateUser(int id, User updatedUser) {
-        Optional<User> user = repository.findById(id);
+    public UserDTO updateUser(int id, Users updatedUser) {
+        Optional<Users> user = repository.findById(id);
         if (user.isPresent()) {
-            User u = user.get();
+            Users u = user.get();
             u.setName(updatedUser.getName());
             u.setEmail(updatedUser.getEmail());
             repository.save(u);
@@ -47,7 +47,7 @@ public class UserService {
         return null;
     }
     public void deleteUser(int id){
-        Optional<User> user = repository.findById(id);
+        Optional<Users> user = repository.findById(id);
         if(user.isPresent()){
             repository.deleteById(id);
             return;

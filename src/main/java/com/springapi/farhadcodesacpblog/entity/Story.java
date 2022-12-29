@@ -18,7 +18,7 @@ public class Story {
     @GeneratedValue
     private  int Id;
     @ManyToOne
-    private User AuthorId;
+    private Users AuthorId;
     @NotBlank
     @NotEmpty
     @NotNull
@@ -39,7 +39,7 @@ public class Story {
     private Date CreationTime = new Date(System.currentTimeMillis());
     private Date LastModifiedTime = new Date(System.currentTimeMillis());
 
-    public Story(int id, User authorId, String title, String description, String difficulty, String topic) {
+    public Story(int id, Users authorId, String title, String description, String difficulty, String topic) {
         Id = id;
         AuthorId = authorId;
         Title = title;
@@ -67,11 +67,11 @@ public class Story {
         Id = id;
     }
 
-    public User getAuthorId() {
+    public Users getAuthorId() {
         return AuthorId;
     }
 
-    public void setAuthorId(User authorId) {
+    public void setAuthorId(Users authorId) {
         AuthorId = authorId;
     }
 

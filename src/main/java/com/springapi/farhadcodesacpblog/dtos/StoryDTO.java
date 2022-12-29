@@ -1,6 +1,6 @@
 package com.springapi.farhadcodesacpblog.dtos;
 
-import com.springapi.farhadcodesacpblog.entity.User;
+import com.springapi.farhadcodesacpblog.entity.Users;
 
 import java.util.Date;
 

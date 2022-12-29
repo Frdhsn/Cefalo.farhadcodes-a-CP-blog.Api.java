@@ -11,7 +11,8 @@ public class StoryDTOMapper {
         storyDto.setId(story.getId());
         storyDto.setTitle(story.getTitle());
         storyDto.setDescription(story.getDescription());
-        storyDto.setAuthor(story.getAuthorId().getEmail());
+//        storyDto.setAuthor(story.getAuthorId().getEmail());
+
         storyDto.setCreationTime(story.getCreationTime());
         return storyDto;
     }

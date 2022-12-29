@@ -28,9 +28,9 @@ public class StoryController {
     }
 
     /*@PostMapping(value="/" , produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE} )
-    public ResponseEntity<?> postStory(@RequestBody Story storys) {
+    public ResponseEntity<?> postStory(@RequestBody Story story) {
 
-        StoryDto newStory =storyService.postStory(storys);
+        StoryDTO newStory = storyService.postStory(story);
         //return ResponseEntity.status(HttpStatus.CREATED).body(newStory);
         return new ResponseEntity<>(newStory, HttpStatus.CREATED);
     }*/

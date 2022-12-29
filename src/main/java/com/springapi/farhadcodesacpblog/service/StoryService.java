@@ -2,7 +2,6 @@ package com.springapi.farhadcodesacpblog.service;
 
 import com.springapi.farhadcodesacpblog.dtos.StoryDTO;
 import com.springapi.farhadcodesacpblog.entity.Story;
-import com.springapi.farhadcodesacpblog.entity.User;
 import com.springapi.farhadcodesacpblog.repository.StoryRepository;
 import com.springapi.farhadcodesacpblog.repository.UserRepository;
 import com.springapi.farhadcodesacpblog.utils.StoryDTOMapper;
@@ -39,7 +38,7 @@ public class StoryService {
 
     /*public StoryDTO postStory(Story story)  {
 
-        Optional<User> currentUser=userRepository.findByEmail(userEmail);
+        Optional<User> currentUser= userRepository.findByEmail(userEmail);
         story.setAuthorId(currentUser.get());
         storyRepository.save(story);
         return storyDTOMapper.mapDetails(story);
