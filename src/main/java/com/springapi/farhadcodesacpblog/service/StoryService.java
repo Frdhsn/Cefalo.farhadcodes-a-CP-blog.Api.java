@@ -19,13 +19,13 @@ import java.util.Optional;
 @Service
 public class StoryService {
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private StoryDTOMapper storyDTOMapper;
-    @Autowired
     private StoryRepository storyRepository;
     @Autowired
+    private UserRepository userRepository;
+    @Autowired
     private StoryValidation storyValidation;
+    @Autowired
+    private StoryDTOMapper storyDTOMapper;
     public List<StoryDTO> getAllStory() {
 
         List<Story> allStudent= storyRepository.findAll();
