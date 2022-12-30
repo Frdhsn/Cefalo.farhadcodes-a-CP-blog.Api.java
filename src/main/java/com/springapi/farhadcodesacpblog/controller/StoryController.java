@@ -27,13 +27,13 @@ public class StoryController {
         return ResponseEntity.status(HttpStatus.OK).body(newStory);
     }
 
-    /*@PostMapping(value="/" , produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE} )
+    @PostMapping(value="/stories/" , produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE} )
     public ResponseEntity<?> postStory(@RequestBody Story story) {
 
         StoryDTO newStory = storyService.postStory(story);
         //return ResponseEntity.status(HttpStatus.CREATED).body(newStory);
         return new ResponseEntity<>(newStory, HttpStatus.CREATED);
-    }*/
+    }
 
     @PutMapping("/stories/{id}")
     public ResponseEntity<?> updateStory(@PathVariable int id, @RequestBody Story story) {

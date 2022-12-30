@@ -3,7 +3,6 @@ package com.springapi.farhadcodesacpblog.security.utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,7 @@ import java.util.function.Function;
 @Component
 public class JwtUtil implements Serializable {
 //    @Value("${SECRET_KEY}")
-    private String SECRET_KEY = "Secret_key";
+    private String SECRET_KEY = "b2l5YXNvaWpmb2lkc2Zpb3NkaGZvaHNkZnVoc2RvaWZodWhZVVdKQlNHQkpGODIzODQ3ODkz";
 
     public String extractUsername(String token) {
 
@@ -44,14 +43,16 @@ public class JwtUtil implements Serializable {
 
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
+        System.out.println("UserDetails: " + userDetails);
         return createToken(claims, userDetails.getUsername());
     }
 
     private String createToken(Map<String, Object> claims, String subject) {
 
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+        var x = Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
+        return x;
     }
 
     public Boolean validateToken(String token, UserDetails userDetails) {

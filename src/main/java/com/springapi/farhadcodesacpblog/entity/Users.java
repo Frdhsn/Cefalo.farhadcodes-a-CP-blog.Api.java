@@ -1,8 +1,7 @@
 package com.springapi.farhadcodesacpblog.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.util.Date;
 import java.util.Objects;
@@ -10,21 +9,33 @@ import java.util.Objects;
 @Entity
 public class Users {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank
+    @NotEmpty
+    @NotNull
+    @Pattern(regexp = "^[A-Za-z\\s]+$"  , message = "Invalid name. name must have length atleast 3 character UpperCase or LowerCase")
     private String name;
+    @NotBlank
+    @NotEmpty
+    @NotNull
+    @Column(unique = true)
+    @Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}",flags = Pattern.Flag.CASE_INSENSITIVE, message = "Email have to be unique")
     private String email;
+    @NotBlank
+    @NotEmpty
+    @NotNull
     private String password;
-    private Date CreationTime = new Date(System.currentTimeMillis());
-    private Date LastModifiedTime = new Date(System.currentTimeMillis());
 
-    public Users(int id, String name, String email, String password, Date creationTime, Date lastModifiedTime) {
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date CreationTime = new Date(System.currentTimeMillis());
+
+    public Users(int id, String name, String email, String password, Date creationTime) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         CreationTime = creationTime;
-        LastModifiedTime = lastModifiedTime;
     }
 
 
@@ -71,14 +82,6 @@ public class Users {
         CreationTime = creationTime;
     }
 
-    public Date getLastModifiedTime() {
-        return LastModifiedTime;
-    }
-
-    public void setLastModifiedTime(Date lastModifiedTime) {
-        LastModifiedTime = lastModifiedTime;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -87,7 +90,6 @@ public class Users {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", CreationTime=" + CreationTime +
-                ", LastModifiedTime=" + LastModifiedTime +
                 '}';
     }
     @Override
@@ -95,7 +97,7 @@ public class Users {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Users user = (Users) o;
-        return id == user.id && name.equals(user.name) && email.equals(user.email) && password.equals(user.password) && CreationTime.equals(user.CreationTime) && LastModifiedTime.equals(user.LastModifiedTime);
+        return id == user.id && name.equals(user.name) && email.equals(user.email) && password.equals(user.password) && CreationTime.equals(user.CreationTime);
     }
 
     @Override

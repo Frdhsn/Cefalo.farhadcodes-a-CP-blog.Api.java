@@ -50,5 +50,21 @@ public class SecurityConfiguration {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
+        /*http.csrf()
+                .disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/users/login","/users/signup")
+                .permitAll()
+                .requestMatchers(HttpMethod.GET,"/stories/","/stories/*")
+                .permitAll()
+                .requestMatchers(HttpMethod.GET,"/users/","/users/*")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();*/
+
     }
 }

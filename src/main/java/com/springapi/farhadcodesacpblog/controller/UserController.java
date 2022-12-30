@@ -26,12 +26,6 @@ public class UserController {
         UserDTO user = service.getUserById(id);
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
-
-    @PostMapping("/users")
-    public Users createUser(@RequestBody Users user) {
-        return service.createUser(user);
-    }
-
     @PutMapping(value = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> updateUser(@PathVariable int id, @RequestBody Users updatedUser) {
         UserDTO user = service.updateUser(id, updatedUser);
