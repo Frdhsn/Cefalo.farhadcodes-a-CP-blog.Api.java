@@ -31,7 +31,6 @@ public class StoryController {
     public ResponseEntity<?> postStory(@RequestBody Story story) {
 
         StoryDTO newStory = storyService.postStory(story);
-        //return ResponseEntity.status(HttpStatus.CREATED).body(newStory);
         return new ResponseEntity<>(newStory, HttpStatus.CREATED);
     }
 

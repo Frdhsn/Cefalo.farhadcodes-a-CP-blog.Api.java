@@ -19,6 +19,5 @@ public class AuthenticateManager {
         final UserDetails _userDetails= userDetails.loadUserByUsername(users.getEmail());
         final String token= jwtUtil.generateToken(_userDetails);
         return token;
-
     }
 }

@@ -36,7 +36,8 @@ public class StoryService {
     public StoryDTO getSingleStory(int id) {
 
         Optional<Story> checkStory=storyRepository.findById(id);
-        if(checkStory.isEmpty()) throw new NotFoundException(Story.class,"id",String.valueOf(id));
+        if(checkStory.isEmpty())
+            throw new NotFoundException(Story.class,"id",String.valueOf(id));
         return storyDTOMapper.mapDetails(checkStory.get());
     }
 
@@ -52,7 +53,8 @@ public class StoryService {
 
         Optional<Story> newStory=storyRepository.findById(id);
 
-        if(newStory.isEmpty()) throw new NotFoundException(Story.class,"id",String.valueOf(id));
+        if(newStory.isEmpty())
+            throw new NotFoundException(Story.class,"id",String.valueOf(id));
         if(newStory.isPresent()){
 
             Story checkStory=newStory.get();
@@ -67,7 +69,8 @@ public class StoryService {
     public void deleteStory(int id) {
 
         Optional<Story> newStory= storyRepository.findById(id);
-        if(newStory.isEmpty()) throw new NotFoundException(Story.class,"id",String.valueOf(id));
+        if(newStory.isEmpty())
+            throw new NotFoundException(Story.class,"id",String.valueOf(id));
 
         if(storyValidation.verify(newStory)) {
             storyRepository.deleteById(id);
