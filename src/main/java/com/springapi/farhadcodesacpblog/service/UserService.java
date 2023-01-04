@@ -16,19 +16,19 @@ import java.util.Optional;
 @Service
 public class UserService {
     @Autowired
-    private UserRepository repository;
+    private UserRepository userRepository;
     @Autowired
     private UserValidation userValidation;
     @Autowired
     private UserDTOMapper userDTOMapper;
 
     public List<UserDTO> getAllUsers() {
-        List<Users> fetchedUsers = repository.findAll();
+        List<Users> fetchedUsers = userRepository.findAll();
         return fetchedUsers.stream().map(x->userDTOMapper.mapDetails(x)).toList();
     }
 
     public UserDTO getUserById(int id) {
-        Optional<Users> fetchedUser = repository.findById(id);
+        Optional<Users> fetchedUser = userRepository.findById(id);
 
         if(fetchedUser.isPresent()){
             UserDTO user = userDTOMapper.mapDetails(fetchedUser.get());
@@ -37,16 +37,15 @@ public class UserService {
         throw new NotFoundException(Users.class,"id",String.valueOf(id));
     }
     public UserDTO updateUser(int id, Users updatedUser) {
-        Optional<Users> user = repository.findById(id);
+        Optional<Users> user = userRepository.findById(id);
 
         if(user.isEmpty()) throw new NotFoundException(Users.class,"id",String.valueOf(id));
 
         if (userValidation.verify(user.get())) {
-            Users u = user.get();
-            u.setName(updatedUser.getName());
-            u.setEmail(updatedUser.getEmail());
-            u.setPassword(updatedUser.getPassword());
-            repository.save(u);
+            user.get().setName(updatedUser.getName());
+            user.get().setEmail(updatedUser.getEmail());
+            user.get().setPassword(updatedUser.getPassword());
+            userRepository.save(user.get());
 
             UserDTO userDTO = userDTOMapper.mapDetails(user.get());
             return userDTO;
@@ -54,10 +53,10 @@ public class UserService {
         throw new UnauthorizedException("Unauthorized user");
     }
     public void deleteUser(int id){
-        Optional<Users> user = repository.findById(id);
+        Optional<Users> user = userRepository.findById(id);
         if(user.isEmpty()) throw new NotFoundException(Users.class,"id",String.valueOf(id));
         if(userValidation.verify(user.get())){
-            repository.deleteById(id);
+            userRepository.deleteById(id);
             return;
         }
         throw new UnauthorizedException("Unauthorized user");
