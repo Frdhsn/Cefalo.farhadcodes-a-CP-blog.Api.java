@@ -1,7 +1,7 @@
 package com.springapi.farhadcodesacpblog.utils.authorization;
 
 import com.springapi.farhadcodesacpblog.entity.Users;
-import com.springapi.farhadcodesacpblog.security.IAuthenticationHelper;
+import com.springapi.farhadcodesacpblog.security.handlers.IAuthenticationHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;

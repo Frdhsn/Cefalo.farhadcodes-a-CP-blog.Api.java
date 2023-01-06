@@ -20,7 +20,6 @@ public class UserController {
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getAllUsers());
     }
-
     @GetMapping("/users/{id}")
     public ResponseEntity<?> getUserById(@PathVariable int id) {
         UserDTO user = service.getUserById(id);

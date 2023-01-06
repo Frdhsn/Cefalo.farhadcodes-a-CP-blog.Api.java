@@ -1,6 +1,7 @@
-package com.springapi.farhadcodesacpblog.security;
+package com.springapi.farhadcodesacpblog.security.handlers;
 
 import com.springapi.farhadcodesacpblog.entity.Users;
+import com.springapi.farhadcodesacpblog.security.UserDetailsServiceHandler;
 import com.springapi.farhadcodesacpblog.security.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

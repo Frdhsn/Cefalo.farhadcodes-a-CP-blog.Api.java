@@ -1,7 +1,7 @@
 package com.springapi.farhadcodesacpblog.controller;
 
 import com.springapi.farhadcodesacpblog.entity.Users;
-import com.springapi.farhadcodesacpblog.security.AuthenticateManager;
+import com.springapi.farhadcodesacpblog.security.handlers.AuthenticateManager;
 import com.springapi.farhadcodesacpblog.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +22,6 @@ public class AuthController {
         String token = authenticateManager.authenticate(newUser);
         return ResponseEntity.status(HttpStatus.CREATED).body(token);
     }
-
     @PostMapping("/users/login")
     public ResponseEntity<?> logIn(@RequestBody Users users) {
         Users newUser = authService.Login(users);
