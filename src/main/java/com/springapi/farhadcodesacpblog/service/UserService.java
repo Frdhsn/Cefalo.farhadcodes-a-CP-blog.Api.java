@@ -44,7 +44,7 @@ public class UserService {
         if (userValidation.verify(user.get())) {
             user.get().setName(updatedUser.getName());
             user.get().setEmail(updatedUser.getEmail());
-            user.get().setPassword(updatedUser.getPassword());
+//            user.get().setPassword(updatedUser.getPassword());
             userRepository.save(user.get());
 
             UserDTO userDTO = userDTOMapper.mapDetails(user.get());

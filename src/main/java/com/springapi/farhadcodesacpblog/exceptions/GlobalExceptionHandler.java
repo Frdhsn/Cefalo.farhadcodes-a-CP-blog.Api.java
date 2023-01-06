@@ -13,7 +13,7 @@ import java.util.List;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler implements RestExceptionHandler<Exception>{
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handle(Exception ex) {
-
+        ex.printStackTrace();
         List<String> Error=new ArrayList<>();
         Error.add(ex.getMessage());
         ErrorBody errorBody = new ErrorBody();
