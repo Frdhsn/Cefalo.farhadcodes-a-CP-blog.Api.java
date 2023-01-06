@@ -55,7 +55,8 @@ public class StoryService {
 
         if(newStory.isEmpty())
             throw new NotFoundException(Story.class,"id",String.valueOf(id));
-        if(newStory.isPresent()){
+
+        if(storyValidation.verify(newStory)){
 
             Story checkStory=newStory.get();
             checkStory.setTitle(story.getTitle());
