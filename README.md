@@ -21,14 +21,16 @@ farhadcodes-a-CP-blog is a simple fullstack web blog app where a user can sign u
 </ol>
 
 # Getting Started
+
 To get the app up and running on your local machine, follow these steps:
-- Clone the repository to your local machine. Using `git clone https://github.com/<your-username>/<repo-name>.git`
-- Change into the directory of the cloned repository using `cd <repo-name>`
+
+- Clone the repository to your local machine. Using `git clone https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java.git`
+- Change into the directory of the cloned repository using `cd Cefalo.farhadcodes-a-CP-blog.Api.java`
 - Build the project with Gradle. Using `gradle build`
 - Run the application. Using `gradle bootRun`
-<br><br>The app will be running at http://localhost:8080/.
+  <br><br>The app will be running at http://localhost:8080/.
 
 # Api Documentation
 
-- [User Related](/documentation/userApiDocumentation.md) 
+- [User Related](/documentation/userApiDocumentation.md)
 - [Story Related](/documentation/storyApiDocumentation.md)
