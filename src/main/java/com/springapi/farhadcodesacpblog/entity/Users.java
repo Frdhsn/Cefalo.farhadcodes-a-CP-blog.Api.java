@@ -38,7 +38,6 @@ public class Users {
         CreationTime = creationTime;
     }
 
-
     public Users() {
     }
 

@@ -28,12 +28,9 @@ public class Story {
     @Temporal(TemporalType.TIMESTAMP)
     private Date CreationTime = new Date(System.currentTimeMillis());
 
-
-
     public Story() {
 
     }
-
     public Story(int id, Users authorId, String title, String description) {
         this.id = id;
         this.authorId = authorId;

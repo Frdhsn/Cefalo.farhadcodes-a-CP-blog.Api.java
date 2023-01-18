@@ -10,36 +10,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path="/stories")
 public class StoryController {
     @Autowired
     private StoryService storyService;
 
 
-    @GetMapping("/stories")
+    @GetMapping("/")
     public ResponseEntity<List<StoryDTO>> getAllStory() {
         return ResponseEntity.status(HttpStatus.OK).body(storyService.getAllStory());
     }
 
-    @GetMapping("/stories/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getSingleStory(@PathVariable int id) {
 
         StoryDTO newStory =storyService.getSingleStory(id);
         return ResponseEntity.status(HttpStatus.OK).body(newStory);
     }
 
-    @PostMapping(value="/stories/" , produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE} )
+    @PostMapping(value="/" , produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE} )
     public ResponseEntity<?> postStory(@RequestBody Story story) {
 
         StoryDTO newStory = storyService.postStory(story);
         return new ResponseEntity<>(newStory, HttpStatus.CREATED);
     }
 
-    @PutMapping("/stories/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<?> updateStory(@PathVariable int id, @RequestBody Story story) {
         StoryDTO newStory =storyService.updateStory(id, story);
         return ResponseEntity.status(HttpStatus.OK).body(newStory);
     }
-    @DeleteMapping("/stories/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteStory(@PathVariable int id) {
         storyService.deleteStory(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
