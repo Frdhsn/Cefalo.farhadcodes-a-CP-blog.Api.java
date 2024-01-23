@@ -1,0 +1,169 @@
+repo_name: Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java
+report_id: 9ed10de717c73790cacf9f95a7c69d89
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-23T18:54:53+00:00'
+requested_by: Frdhsn
+provider: github
+branch: master
+detected_tools_count: 13
+tools:
+- name: Java
+  description: A concurrent, class-based, object-oriented, language specifically designed
+    to have as few implementation dependencies as possible
+  website_url: https://www.java.com
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java
+  detection_source: Repo Metadata
+- name: Spring Framework
+  description: An application framework and inversion of control container for the
+    Java platform
+  website_url: https://spring.io/projects/spring-framework
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/2006/spring-framework-project-logo.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java
+  detection_source: Repo Metadata
+- name: Gradle
+  description: A powerful build system for the JVM
+  website_url: https://www.gradle.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Java Build Tools
+  image_url: https://img.stackshare.io/service/975/gradlephant-social-black-bg.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: Farhad Hossain
+  last_updated_on: 2022-12-22 16:49:34.000000000 Z
+- name: Apache Camel
+  description: A versatile open source integration framework
+  website_url: https://camel.apache.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Application Hosting
+  sub_category: Platform as a Service
+  image_url: https://img.stackshare.io/service/3276/xWt1RFo6_400x400.jpg
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/src/main/resources/application.properties
+  detection_source: src/main/resources/application.properties
+  last_updated_by: frdhsn
+  last_updated_on: 2023-01-04 11:17:40.000000000 Z
+- name: mysql:mysql-connector-java
+  description: MySQL JDBC Type 4 driver
+  license: GPL-3.0-only
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: Farhad Hossain
+  last_updated_on: 2022-12-22 22:48:21.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-data-jpa
+  description: Starter for using Spring Data JPA with Hibernate
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-jdbc
+  description: Starter for using JDBC with the HikariCP connection pool
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-security
+  description: Starter for using Spring Security
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-test
+  description: Starter for testing Spring Boot applications with libraries including
+    JUnit
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-validation
+  description: Starter for using Java Bean Validation with Hibernate Validator
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-web
+  description: Starter for building web, including RESTful, applications using Spring
+    MVC
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
+- name: org.springframework.security:spring-security-test
+  description: Spring-security-test
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/Frdhsn/Cefalo.farhadcodes-a-CP-blog.Api.java/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: frdhsn
+  last_updated_on: 2022-12-30 11:37:04.000000000 Z
